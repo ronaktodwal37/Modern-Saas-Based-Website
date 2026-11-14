@@ -88,7 +88,7 @@ export default function Home() {
           best work.
         </p>
         <div className="flex justify-center">
-          {/* <Button variant="primary">Get Started</Button> */}
+          <Button variant="primary">Get Started</Button>
         </div>
       </section>
     </div>
