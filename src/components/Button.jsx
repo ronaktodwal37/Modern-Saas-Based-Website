@@ -1,19 +1,30 @@
-// src/components/Button.jsx
 import { motion } from "framer-motion";
 
-export default function Button({ children, variant = "primary", onClick, type = "button" }) {
-  const base = "px-4 py-2 rounded-md font-medium transition-all disabled:opacity-50 disabled:pointer-events-none";
-  const styles = {
-    primary: "bg-gradient-to-r from-brandViolet to-brandIndigo text-white shadow-md hover:shadow-lg",
-    secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300"
-  }[variant];
+export default function Button({
+  children,
+  variant = "primary",
+  onClick,
+  type = "button",
+  disabled = false,
+  className = "",
+}) {
+  const baseStyles =
+    "inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50";
+
+  const variants = {
+    primary: "bg-brandViolet text-white hover:bg-brandIndigo shadow-md",
+    secondary: "border border-gray-200 bg-white text-gray-800 hover:bg-gray-50",
+    outline: "border border-brandViolet text-brandViolet hover:bg-brandViolet hover:text-white",
+  };
+
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
       type={type}
       onClick={onClick}
-      className={`${base} ${styles}`}
+      disabled={disabled}
+      whileHover={!disabled ? { scale: 1.03 } : undefined}
+      whileTap={!disabled ? { scale: 0.97 } : undefined}
+      className={`${baseStyles} ${variants[variant] || variants.primary} ${className}`}
     >
       {children}
     </motion.button>

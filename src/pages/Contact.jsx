@@ -45,9 +45,9 @@ export default function Contact() {
           <p>+1 (555) 123-4567</p>
           <div className="flex space-x-4 mt-4">
             {/* Placeholder social icons */}
-            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><rect width="20" height="14" x="2" y="5" rx="2"/></svg>
-            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><polygon points="12,2 2,22 22,22"/></svg>
+            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg>
+            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><rect width="20" height="14" x="2" y="5" rx="2" /></svg>
+            <svg className="h-6 w-6 text-gray-600" fill="currentColor"><polygon points="12,2 2,22 22,22" /></svg>
           </div>
         </div>
         {/* Form */}
@@ -69,7 +69,9 @@ export default function Contact() {
           ) : status === 'success' ? (
             <div className="p-4 bg-green-100 text-green-800 rounded">🎉 Your request has been sent! We’ll reply soon.</div>
           ) : (
-            <Button variant="primary">Send Demo Request</Button>
+            <Button variant="primary" type="submit">
+              Send Demo Request
+            </Button>
           )}
         </form>
       </div>

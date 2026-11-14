@@ -68,16 +68,7 @@
 }
 
 /* Root Container */
-#root {
-  width: 100%;
-  max-width: 1126px;
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  border-inline: 1px solid var(--border);
-}
+
 
 /* Headings */
 h1 {
